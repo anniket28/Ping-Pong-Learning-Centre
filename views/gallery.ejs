@@ -1,0 +1,76 @@
+<!--  -->
+<%- include('Layouts/header.ejs') %>
+
+<!--  -->
+<div id="ourGalleryCarousel" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#ourGalleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#ourGalleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#ourGalleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/images/carouselImage1.webp" class="d-block md:h-[75vh] w-[100vw]" alt="Ping Pong Image 1">
+      </div>
+      <div class="carousel-item">
+        <img src="/static/images/carouselImage2.webp" class="d-block md:h-[75vh] w-[100vw]" alt="Ping Pong Image 2">
+      </div>
+      <div class="carousel-item">
+        <img src="/static/images/carouselImage3.webp" class="d-block md:h-[75vh] w-[100vw]" alt="Ping Pong Image 3">
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="modal fade show" id="imageModal" aria-hidden="true" aria-labelledby="imageModalLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div style="border-radius: 25px !important;" class="modal-content">
+        <img style="border-radius: 25px !important;" id="myGalleryImage" class="block object-cover object-center w-full h-full">
+      </div>
+    </div>
+  </div>
+  
+  <!--  -->
+  <section class="overflow-hidden text-gray-700 ">
+    <div class="container px-5 mx-auto py-16 md:px-20 lg:px-32">
+      <div class="flex flex-wrap -m-1 md:-m-2">
+        <% galleryImages.forEach(function(galleryImage) { %>
+          <!--  -->
+          <div class="flex flex-wrap w-1/3">
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+                data-bs-toggle="modal" href="#imageModal" onclick="setImageModal(`<%= galleryImage %>`)"
+                src="/static/images/Gallery/<%= galleryImage %>">
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <!--  -->
+  <%- include('Layouts/footer.ejs') %>
+
+  <!--  -->
+  <%- include('Layouts/whatsapp.ejs') %>
+
+  <!--  -->
+  <%- include('Layouts/toTop.ejs') %>
+
+  <script>
+    // 
+    document.getElementById('gallery').classList.remove('hover:border-b-[4px]')
+    document.getElementById('gallery').style.borderBottomWidth="4px"
+
+    // 
+    const myCarouselElement = document.querySelector('#ourGalleryCarousel')
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+      interval: 3000
+    })
+
+    // 
+    function setImageModal(imageName) {
+      document.getElementById('myGalleryImage').src=`/static/images/Gallery/${imageName}`
+      document.getElementById('myGalleryImage').alt=imageName
+    }
+  </script>

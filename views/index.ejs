@@ -1,0 +1,445 @@
+<!--  -->
+<%- include('Layouts/header.ejs') %>
+
+<!--  -->
+<section>
+    <video id="homeBackground" muted defaultMuted playsinline loop autoplay oncontextmenu="return false;"  preload="auto" class="object-cover md:h-[550px]">
+      <source src="/static/videos/homeBackgroundVideo.mp4" type="video/mp4">
+    </video>
+    <div class="absolute top-[47%] hidden md:block left-0 right-0">
+      <h2 style="background-color: rgba(255, 255, 255, 0.65); width: fit-content;" class="text-center font-bold mx-auto px-3 py-1 text-white rounded-full text-[30px] md:text-[40px] lg:text-[50px]">
+        <span style="color: #ff236c; font-family: Bubblegum Sans, sans-serif;">Ping Pong Learning Centre</span>
+        <br>
+        <span style="color: #625ef1; font-family: Bubblegum Sans, sans-serif;">"Creating magic inside the four walls"</span>
+      </h2>
+    </div>
+    <div class="absolute top-[45%] hidden sm:block md:hidden left-0 right-0">
+      <h2 style="background-color: rgba(255, 255, 255, 0.65); width: fit-content;" class="text-center font-bold mx-auto px-3 py-1 text-white rounded-full text-[30px] md:text-[40px] lg:text-[50px]">
+        <span style="color: #ff236c; font-family: Bubblegum Sans, sans-serif;">Ping Pong Learning Centre</span>
+        <br>
+        <span style="color: #625ef1; font-family: Bubblegum Sans, sans-serif;">"Creating magic inside the four walls"</span>
+      </h2>
+    </div>
+    <div class="block sm:hidden">
+      <h2 style="background-color: rgba(255, 255, 255, 0.65); width: fit-content;" class="text-center font-bold mx-auto px-3 py-1 text-white rounded-full text-[25px] md:text-[40px] lg:text-[50px]">
+        <span style="color: #ff236c; font-family: Bubblegum Sans, sans-serif;">Ping Pong Learning Centre</span>
+        <br>
+        <span id="homeSlogan" style="color: #625ef1; font-family: Bubblegum Sans, sans-serif;">"Creating magic inside the four walls"</span>
+      </h2>
+    </div>
+  </section>
+
+  <!--  -->
+  <section id="aboutPreview" class='py-10 flex flex-col px-1 items-center md:px-10 lg:px-16 xl:px-[103px] lg:flex-row lg:py-8 space-y-8 lg:space-y-0'>
+    <div class='w-full lg:w-[70%] lg:mx-3'>
+      <h2 style="color: #ff236c; font-family: Bubblegum Sans, sans-serif;" class='text-lg text-center font-bold sm:text-xl md:text-2xl lg:text-left lg:text-2xl lg:mx-2'>Welcome to our Ping Pong</h2>
+      <p class='text-sm px-3 text-slate-500 mt-3 mb-3 lg:mb-5 text-justify sm:text-base md:text-base lg:text-base lg:px-0 lg:mx-2'>We began our journey on March 15th 2016 with a vision. We wanted to start off a learning centre that could cater to the needs of the present era where children could learn, play and grow in a secure and loving environment. We leave no stone unturned in providing our children the best of everything because these are the years where they for the first time come out of the protective shell of their parents and explore the outside world.</p>
+      <a href="/about" class="bg-slate-700 text-sm mx-3 px-3 text-white sm:text-base md:text-base lg:text-base lg:px-5 lg:mx-2 py-2 rounded-xl my-link-bg">Discover More</a>
+    </div>
+    <div class='mt-3 w-3/4 text-center sm:w-2/3 md:w-1/2'>
+      <img class="rounded-lg" height="300" width="500" src="/static/images/aboutPreview.webp" alt="Ping Pong Learning Centre About Preview Image">
+    </div>
+  </section>
+
+  <!--  -->
+  <section id="ourClasses" class="py-10 lg:py-12 px-3 md:px-16 lg:px-20 xl:px-[108px]">
+    <h2 style="color: #ff236c; font-family: Bubblegum Sans, sans-serif;" class='text-lg text-center font-bold sm:text-xl md:text-2xl lg:text-2xl lg:mx-2 mb-10'>Our Programs</h2>
+    <!-- For Big Devices -->
+    <div id="carouselOurClassControlsBigDevices" class="carousel slide hidden lg:block" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-yellow-100 rounded-full'>
+                <img src="/static/images/toddler.webp" alt="Toddler Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Toddler (1.5 to 2 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Our Parent-Toddler program is specially designed to help toddlers prepare for...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#toddlerTrainingProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-green-100 rounded-full'>
+                <img src="/static/images/playgroup.webp" alt="Playgroup Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Playgroup (2 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">The most important years of learning begins as soon as a child is born since they...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#playgroupProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-indigo-100 rounded-full'>
+                <img src="/static/images/nursery.webp" alt="Nursery Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Nursery (3 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">A Pre school is a foundation for the future of a child. Our this program completely...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#nurseryProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-blue-100 rounded-full'>
+                <img src="/static/images/lkg.webp" alt="LKG Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>LKG (4 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Going to Lower Kindergarten is an important step for a child after pre school...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#lkgProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-orange-100 rounded-full'>
+                <img src="/static/images/ukg.webp" alt="UKG Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>UKG (5 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">The transition of kid from pre school to primary school should be smooth enough...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#ukgProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-red-100 rounded-full'>
+                <img src="/static/images/daycare.webp" alt="Daycare Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Daycare (2 to 10 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Ping Pong Learning Centre brings exceptional daycare services for children...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#daycareProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center space-x-5">
+        <button aria-label="previous" style="background-color: #ff236c;" class="rounded-full our-class-carousel-buttons" data-bs-target="#carouselOurClassControlsBigDevices" data-bs-slide="prev"><svg xmlns="http://www.w3.org/2000/svg" fill="white" height="48" width="48"><path d="M28.05 36 16 23.95 28.05 11.9 30.2 14.05 20.3 23.95 30.2 33.85Z"/></svg></button>
+        <button aria-label="next" style="background-color: #ff236c;" class="rounded-full our-class-carousel-buttons" data-bs-target="#carouselOurClassControlsBigDevices" data-bs-slide="next"><svg xmlns="http://www.w3.org/2000/svg" fill="white" height="48" width="48"><path d="M18.75 36 16.6 33.85 26.5 23.95 16.6 14.05 18.75 11.9 30.8 23.95Z"/></svg></button>
+      </div>
+    </div>
+    <!-- For Medium Devices -->
+    <div id="carouselOurClassControlsMdDevices" class="carousel slide hidden md:block lg:hidden" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-yellow-100 rounded-full'>
+                <img src="/static/images/toddler.webp" alt="Toddler Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Toddler (1.5 to 2 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Our Parent-Toddler program is specially designed to help toddlers prepare for...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#toddlerTrainingProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-green-100 rounded-full'>
+                <img src="/static/images/playgroup.webp" alt="Playgroup Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Playgroup (2 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">The most important years of learning begins as soon as a child is born since they...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#playgroupProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-indigo-100 rounded-full'>
+                <img src="/static/images/nursery.webp" alt="Nursery Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Nursery (3 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">A Pre school is a foundation for the future of a child. Our this program completely...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#nurseryProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-blue-100 rounded-full'>
+                <img src="/static/images/lkg.webp" alt="LKG Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>LKG (4 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Going to Lower Kindergarten is an important step for a child after pre school...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#lkgProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-orange-100 rounded-full'>
+                <img src="/static/images/ukg.webp" alt="UKG Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>UKG (5 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">The transition of kid from pre school to primary school should be smooth enough...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#ukgProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-red-100 rounded-full'>
+                <img src="/static/images/daycare.webp" alt="Daycare Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Daycare (2 to 10 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Ping Pong Learning Centre brings exceptional daycare services for children...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#daycareProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center space-x-5">
+        <button aria-label="previous" style="background-color: #ff236c;" class="rounded-full our-class-carousel-buttons" data-bs-target="#carouselOurClassControlsMdDevices" data-bs-slide="prev"><svg xmlns="http://www.w3.org/2000/svg" fill="white" height="48" width="48"><path d="M28.05 36 16 23.95 28.05 11.9 30.2 14.05 20.3 23.95 30.2 33.85Z"/></svg></button>
+        <button aria-label="next" style="background-color: #ff236c;" class="rounded-full our-class-carousel-buttons" data-bs-target="#carouselOurClassControlsMdDevices" data-bs-slide="next"><svg xmlns="http://www.w3.org/2000/svg" fill="white" height="48" width="48"><path d="M18.75 36 16.6 33.85 26.5 23.95 16.6 14.05 18.75 11.9 30.8 23.95Z"/></svg></button>
+      </div>
+    </div>
+    <!-- For Small Devices -->
+    <div id="carouselOurClassControlsSmDevices" class="carousel slide block md:hidden lg:hidden" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-yellow-100 rounded-full'>
+                <img src="/static/images/toddler.webp" alt="Toddler Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Toddler (1.5 to 2 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Our Parent-Toddler program is specially designed to help toddlers prepare for...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#toddlerTrainingProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-green-100 rounded-full'>
+                <img src="/static/images/playgroup.webp" alt="Playgroup Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Playgroup (2 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">The most important years of learning begins as soon as a child is born since they...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#playgroupProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-indigo-100 rounded-full'>
+                <img src="/static/images/nursery.webp" alt="Nursery Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Nursery (3 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">A Pre school is a foundation for the future of a child. Our this program completely...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#nurseryProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-blue-100 rounded-full'>
+                <img src="/static/images/lkg.webp" alt="Toddler Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>LKG (4 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Going to Lower Kindergarten is an important step for a child after pre school...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#lkgProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-orange-100 rounded-full'>
+                <img src="/static/images/ukg.webp" alt="UKG Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>UKG (5 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">The transition of kid from pre school to primary school should be smooth enough...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#ukgProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class='flex flex-wrap flex-col md:flex-row md:justify-around lg:justify-between lg:flex-row '>
+            <!--  -->
+            <div class='flex flex-col shadow-md border-t-[1px] rounded-md mx-auto w-[75%] sm:w-[60%] md:w-[40%] lg:w-[30%] my-6 py-10'>
+              <div class='h-20 w-20 mx-auto bg-red-100 rounded-full'>
+                <img src="/static/images/daycare.webp" alt="Daycare Program Icon">
+              </div>
+              <div class='px-2 md:px-4 lg:px-6 xl:px-10 mt-3'>
+                <h2 class='font-semibold text-lg md:text-xl text-slate-800 text-center mt-3'>Daycare (2 to 10 Years)</h2>
+                <p class="text-[15px] md:text-base mt-2 text-justify">Ping Pong Learning Centre brings exceptional daycare services for children...</p>
+                <div class="text-center mt-4">
+                  <a class="text-sm md:text-base cursor-pointer px-4 py-[7px] rounded-md text-slate-50 bg-black hover:bg-slate-800" href="/our-programs#daycareProgram">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center space-x-5">
+        <button aria-label="previous" style="background-color: #ff236c;" class="rounded-full our-class-carousel-buttons" data-bs-target="#carouselOurClassControlsSmDevices" data-bs-slide="prev"><svg xmlns="http://www.w3.org/2000/svg" fill="white" height="48" width="48"><path d="M28.05 36 16 23.95 28.05 11.9 30.2 14.05 20.3 23.95 30.2 33.85Z"/></svg></button>
+        <button aria-label="next" style="background-color: #ff236c;" class="rounded-full our-class-carousel-buttons" data-bs-target="#carouselOurClassControlsSmDevices" data-bs-slide="next"><svg xmlns="http://www.w3.org/2000/svg" fill="white" height="48" width="48"><path d="M18.75 36 16.6 33.85 26.5 23.95 16.6 14.05 18.75 11.9 30.8 23.95Z"/></svg></button>
+      </div>
+    </div>
+  </section>
+    
+  <!--  -->
+  <section style="background-color: #625ef1;" id="rightFit" class='py-12 flex flex-col px-1 items-center md:px-10 lg:px-16 xl:px-[103px] lg:flex-row lg:py-8'>
+    <div class='w-full lg:w-[70%] lg:mx-3'>
+      <h2 class='text-[20px] text-center font-bold sm:text-[24px] md:text-[30px] lg:text-left lg:text-[36px] lg:mx-2 text-white'>Why Ping Pong Learning Centre is the Right Fit for Your Child?</h2>
+      <div class='px-3 mt-3 lg:px-0 lg:mx-2'>
+        <h2  class="text-white text-center lg:text-left text-[15px] md:text-base">We provide them wings so they can fly high!</h2>
+        <!--  -->
+        <div class="flex items-center mx-auto lg:mx-0 bg-white my-3 mt-5 lg:mt-4 rounded-[45px] py-2 px-6 md:px-7 lg:px-8 w-[80%] sm:w-[73%] md:w-[60%] lg:w-[83%]">
+          <div class='h-14 w-14 rounded-full'>
+            <img src="/static/images/brain.webp" alt="Brain Icon">
+          </div> 
+          <span class="ml-1 md:ml-2 font-semibold md:font-bold text-[15px] md:text-[18px]">Well Trained Professionals</span>
+        </div>
+        <!--  -->
+        <div class="flex items-center mx-auto lg:mx-0 bg-white my-3 mt-5 lg:mt-4 rounded-[45px] py-2 px-6 md:px-7 lg:px-8 w-[80%] sm:w-[73%] md:w-[60%] lg:w-[83%]">
+          <div class='h-14 w-14 rounded-full'>
+            <img src="/static/images/infrastructure.webp" alt="Infrastructure Icon">
+          </div> 
+          <span class="ml-1 md:ml-2 font-semibold md:font-bold text-[15px] md:text-[18px]">Awesome Infra-Structure</span>
+        </div>
+        <!--  -->
+        <div class="flex items-center mx-auto lg:mx-0 bg-white my-3 mt-5 lg:mt-4 rounded-[45px] py-2 px-6 md:px-7 lg:px-8 w-[80%] sm:w-[73%] md:w-[60%] lg:w-[83%]">
+          <div class='h-14 w-14 rounded-full'>
+            <img src="/static/images/books.webp" alt="Books Icon">
+          </div> 
+          <span class="ml-1 md:ml-2 font-semibold md:font-bold text-[15px] md:text-[18px]">Laying the foundation for tomorrow</span>
+        </div>
+      </div>
+    </div>
+    <div class='mt-3 w-3/4 text-center sm:w-2/3 md:w-1/2'>
+      <img class="rounded-lg" height="300" width="500" src="/static/images/childrenImage.webp" alt="Children's Image">
+    </div>
+  </section>
+
+  <!--  -->
+  <section id="testimonials" class="my-16 px-5 lg:px-0">
+    <h2 style="color: #ff236c;" class="text-xl md:text-[22px] lg:text-3xl text-center">Testimonials</h2>
+    <h2 class="text-xl md:text-[22px] lg:text-3xl text-center text-slate-500 pt-1">What People Say About Us ?</h2>
+    <div class="text-white body-font">
+        <div class="container px-5 py-8 mx-auto">
+          <div class="flex flex-wrap -m-4">
+            <div class="p-4 md:w-1/3 w-full">
+              <div style="background-color: #625ef1;" class="h-full p-8 rounded text-[15px] md:text-base">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="block w-5 h-5 text-slate-500 mb-4" viewBox="0 0 975.036 975.036">
+                  <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+                </svg>
+                <p class="leading-relaxed mb-6">Aarya had a very enriching and fun loving experience, I would like to thank to all the teachers for the kindness and care in organising interesting activities, wish all the luck to pingpong.</p>
+                <span class="flex-grow flex flex-col">
+                  <span class="text-slate-200 title-font font-medium">Shivani Bhardwaj m/o Aarya</span>
+                </span>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3 w-full">
+              <div style="background-color: #625ef1;" class="h-full p-8 rounded text-[15px] md:text-base">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="block w-5 h-5 text-slate-500 mb-4" viewBox="0 0 975.036 975.036">
+                  <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+                </svg>
+                <p class="leading-relaxed mb-6">Key to student’s success is a great school and key to a great school is a great director and principal. Thanks to the hardworking teachers, we really appreciate your dedication to our child.</p>
+                <span class="flex-grow flex flex-col">
+                  <span class="text-slate-200 title-font font-medium">Sakshi Khurana m/o Vivaan</span>
+                </span>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3 w-full">
+              <div style="background-color: #625ef1;" class="h-full p-8 rounded text-[15px] md:text-base">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="block w-5 h-5 text-slate-500 mb-4" viewBox="0 0 975.036 975.036">
+                  <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+                </svg>
+                <p class="leading-relaxed mb-6">Play School is foundation of a child’s growth. It was a wonderful journey with pingpong. Really appreciate the patience and efforts by the staff.</p>
+                <span class="flex-grow flex flex-col">
+                  <span class="text-slate-200 title-font font-medium">Chadni Agarwal m/o Ayush</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!--  -->
+  <%- include('Layouts/footer.ejs') %>
+
+  <!--  -->
+  <%- include('Layouts/whatsapp.ejs') %>
+
+  <!--  -->
+  <%- include('Layouts/toTop.ejs') %>
+
+  <script>
+    document.getElementById('home').classList.remove('hover:border-b-[4px]')
+    document.getElementById('home').style.borderBottomWidth="4px"
+  </script>

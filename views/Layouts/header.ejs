@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title><%= title %>Ping Pong Learning Centre</title>
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="Ping Pong Learning Centre">
+    <meta name="description" content="Ping Pong Learning Centre - A Learning Centre where children can learn, play and grow in a secure and loving environment. The various programs at Ping Pong Learning Centre include LKG, UKG, Daycare, Toddler, Playgroup and Nursery. Admissions open for 2022 batch.">
+    <meta name="keywords" content="Ping Pong Learning Centre, Ping Pong Play School, Pingpong, LKG, UKG, Daycare, Toddler, Playgroup, Nursery, Pingpong Haridwar,Ping Pong Learning Centre Haridwar, Ping Pong Play School Haridwar">
+    <link rel="canonical" href="https://pingpongplay.in/">
+    <link rel="icon" href="/static/favicon/pingpongLogo.png" sizes="32x32">
+    <link rel="icon" href="/static/favicon/pingpongLogo.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/static/favicon/pingpongLogo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ping Pong Learning Centre">
+    <meta property="og:description" content="Ping Pong Learning Centre - A Learning Centre where children can learn, play and grow in a secure and loving environment. The various programs at Ping Pong Learning Centre include LKG, UKG, Daycare, Toddler, Playgroup and Nursery. Admissions open for 2022 batch.">
+    <meta property="og:url" content="https://pingpongplay.in/">
+    <meta property="og:site_name" content="Ping Pong Learning Centre">
+    <link rel="manifest" href="/static/favicon/manifest.json">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <!--  -->
+    <% if(visit_booked.length!=0) { %>
+        <template id="visitBookedAlert">
+        <!--  -->
+        <swal-title>
+            <%= visit_booked %>
+        </swal-title>
+        <!--  -->
+        <swal-icon type="success"></swal-icon>
+        <!--  -->
+        <swal-button type="confirm">
+            Ok
+        </swal-button>
+        <!--  -->
+        <swal-param name="allowEscapeKey" value="false" />
+        <!--  -->
+        <swal-param
+            name="customClass"
+            value='{ "popup": "my-popup" }' />
+        </template>
+    <% } %>
+
+    <!--  -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content p-1">
+            <div class="modal-header">
+              <h2 style="color: #ff236c; font-family: Bubblegum Sans, sans-serif;" class="modal-title text-xl md:text-2xl" id="modalLabel">Book a Visit</h2>
+              <button type="button" class="btn-close text-3xl text-slate-500" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form action="/book-a-visit" method="post">
+                    <div class="grid gap-4 md:grid-cols-2 mb-4 mt-1">
+                        <input type="hidden" name="myUrl" id="myUrl">
+                        <div>
+                            <label for="parentNam" class="block mb-[2px] md:mb-1 text-sm md:text-base font-medium text-gray-900">Parent Name <sup class="text-red-500 text-sm md:text-base">*</sup></label>
+                            <input style="outline-color: #ff236c;" type="text" id="parentNam" name="parentName" class="text-sm md:text-base bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5" placeholder="Parent Name">
+                            <div id="parent-name-req" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Parent Name is required</div>
+                        </div>
+                        <div>
+                            <label for="childNam" class="block mb-[2px] md:mb-1 text-sm md:text-base font-medium text-gray-900">Child Name <sup class="text-red-500 text-sm md:text-base">*</sup></label>
+                            <input style="outline-color: #ff236c;" type="text" id="childNam" name="childName" class="text-sm md:text-base bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5" placeholder="Child Name">
+                            <div id="child-name-req" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Child Name is required</div>
+                        </div>
+                        <div>
+                            <label for="contNum" class="block mb-[2px] md:mb-1 text-sm md:text-base font-medium text-gray-900">Contact Number <sup class="text-red-500 text-sm md:text-base">*</sup></label>
+                            <input style="outline-color: #ff236c;" type="number" id="contNum" name="contactNumber" class="text-sm md:text-base bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5" placeholder="Contact Number">
+                            <div id="cont-num-req" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Contact Number is required</div>
+                            <div id="cont-num-format" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Invalid Contact Number</div>
+                            <div id="cont-num-start" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Contact Number should not start with 0</div>
+                        </div>
+                        <div>
+                            <label for="mailId" class="block mb-[2px] md:mb-1 text-sm md:text-base font-medium text-gray-900">Email <sup class="text-red-500 text-sm md:text-base">*</sup></label>
+                            <input style="outline-color: #ff236c;" type="text" id="mailId" name="email" class="text-sm md:text-base bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5" placeholder="Email">
+                            <div id="mail-id-req" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Email is required</div>
+                            <div id="mail-id-format" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Invalid Email</div>
+                        </div>  
+                        <div>
+                            <label for="dat" class="block mb-[2px] md:mb-1 text-sm md:text-base font-medium text-gray-900">Date <sup class="text-red-500 text-sm md:text-base">*</sup></label>
+                            <input style="outline-color: #ff236c;" type="date" id="dat" name="date" class="text-sm md:text-base bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5">
+                            <div id="dat-req" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Date cannot be blank </div>
+                            <div id="dat-now" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Sorry, But you cannot book slot for today now</div>
+                            <div id="dat-off" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Sorry, But we are closed on Sundays</div>
+                        </div>
+                        <div>
+                            <label for="time" class="block mb-[2px] md:mb-1 text-sm md:text-base font-medium text-gray-900">Time Slot <sup class="text-red-500 text-sm md:text-base">*</sup></label>
+                            <select style="outline-color: #ff236c;" id="time" name="timeSlot" class="text-sm md:text-base bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5">
+                                <option value="">--- Select Time Slot ---</option>
+                                <option value="8am-11pm">8 am to 11 pm</option>
+                                <option value="12pm-2pm">12 pm to 2 pm</option>
+                            </select>
+                            <div id="time-req" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Time Slot cannot be blank </div>
+                            <div id="time-inv" class="text-sm md:text-base text-red-600 mt-[1px]" style="display: none;">Sorry, But you cannot book this time slot for today now </div>
+                        </div>  
+                      </div>
+                      <button style="background-color: #ff236c;" class="my-submit-button text-white px-3 py-1 rounded-md text-sm md:text-base" id="bookAVisit" type="submit">Submit</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--  -->
+    <div id="top-bar" class="bg-black shadow py-2 md:flex items-center justify-between px-5 md:px-10">
+        <div class="information justify-center space-x-8 sm:justify-between flex items-center">
+            <div class="flex space-x-8 sm:space-x-5 md:space-x-3 lg:space-x-5">
+                <a style="color: #b7b7b7;" aria-label="email" class="flex items-center info-links my-link-color" href="mailto:pingponghwr@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 24 24" width="25px" fill="#b7b7b7"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                    <span class="ml-1 md:block text-sm md:text-base hidden sm:block">pingponghwr@gmail.com</span>
+                </a>
+                <a style="color: #b7b7b7;" aria-label="contact" class="flex items-center info-links my-link-color" href="tel:+91 7249999934">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 24 24" width="25px" fill="#b7b7b7"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z"/></svg>
+                    <span class="ml-1 md:block text-sm md:text-base hidden sm:block">+91 7249999934</span>
+                </a>
+            </div>
+            <div class="flex md:hidden space-x-8 sm:space-x-4">
+                <a aria-label="Facebook" href="https://www.facebook.com/Pingponglearningcentre/" target="_blank" rel="noopener noreferrer">
+                    <svg class="hover:fill-blue-500" fill="#b7b7b7" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="25px" height="25px"><path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"/></svg>
+                </a>
+                <a aria-label="Instagram" href="https://www.instagram.com/pingponglearningcentre/" target="_blank" rel="noopener noreferrer">
+                    <svg class="hover:fill-rose-700" fill="#b7b7b7" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="25px" height="25px"><path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"/></svg>
+                </a>
+                <a aria-label="Linkedin" href="https://www.linkedin.com/in/ping-pong-learning-centre-8b5444243/" target="_blank" rel="noopener noreferrer">
+                    <svg class="hover:fill-sky-700" fill="#b7b7b7" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="25px" height="25px"><path d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M10.496,8.403 c0.842,0,1.403,0.561,1.403,1.309c0,0.748-0.561,1.309-1.496,1.309C9.561,11.022,9,10.46,9,9.712C9,8.964,9.561,8.403,10.496,8.403z M12,20H9v-8h3V20z M22,20h-2.824v-4.372c0-1.209-0.753-1.488-1.035-1.488s-1.224,0.186-1.224,1.488c0,0.186,0,4.372,0,4.372H14v-8 h2.918v1.116C17.294,12.465,18.047,12,19.459,12C20.871,12,22,13.116,22,15.628V20z"/></svg>            
+                </a>
+            </div>
+        </div>
+        <div class="social hidden md:flex items-center space-x-6">
+            <a aria-label="Facebook" href="https://www.facebook.com/Pingponglearningcentre/" target="_blank" rel="noopener noreferrer">
+                <svg class="hover:fill-blue-500" fill="#b7b7b7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="25px" height="25px"><path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"/></svg>
+            </a>
+            <a aria-label="Instagram" href="https://www.instagram.com/pingponglearningcentre/" target="_blank" rel="noopener noreferrer">
+                <svg class="hover:fill-rose-500" fill="#b7b7b7" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="25px" height="25px"><path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"/></svg>            
+            </a>
+            <a aria-label="Linkedin" href="https://www.linkedin.com/in/ping-pong-learning-centre-8b5444243/" target="_blank" rel="noopener noreferrer">
+                <svg class="hover:fill-sky-700" fill="#b7b7b7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="25px" height="25px"><path d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M10.496,8.403 c0.842,0,1.403,0.561,1.403,1.309c0,0.748-0.561,1.309-1.496,1.309C9.561,11.022,9,10.46,9,9.712C9,8.964,9.561,8.403,10.496,8.403z M12,20H9v-8h3V20z M22,20h-2.824v-4.372c0-1.209-0.753-1.488-1.035-1.488s-1.224,0.186-1.224,1.488c0,0.186,0,4.372,0,4.372H14v-8 h2.918v1.116C17.294,12.465,18.047,12,19.459,12C20.871,12,22,13.116,22,15.628V20z"/></svg>            
+            </a>
+        </div>
+    </div>
+
+    <!--  -->
+    <nav id="navbar" class="bg-white shadow text-black py-[5px]">
+        <div class="md:hidden flex justify-between px-8 sm:px-10">
+            <a class="flex items-center" href="/">
+                <img width="75" height="75" src="/static/images/pingpongLogo.webp" alt="Ping Pong Learning Centre Logo">
+                <span class="font-bold flex flex-col text-lg" style="color: #ff236c;">
+                    <div>Ping Pong</div>
+                    <div>Learning Centre</div>
+                </span>
+            </a>
+            <button aria-label="Hamburger Icon" onclick="openNavbarLinks()" class="">
+                <svg xmlns="http://www.w3.org/2000/svg" height="33px" viewBox="0 0 24 24" width="33px" fill="gray"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+            <div style="transition: 0.3s;width: 0px;" id="navbarLinks" class="shadow h-[100vh] bg-slate-100 overflow-x-hidden absolute top-0 right-0 z-50">
+                <button onclick="closeNavbarLinks()" style="color: gray;" class="text-3xl pl-2 pb-8 pt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="33px" viewBox="0 0 24 24" width="33px" fill="gray"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                </button>
+                <div class="flex flex-col space-y-3 text-base text-center">
+                    <hr class="border-gray-300">
+                    <a style="color: #a5c347;" class="font-semibold" href="/">Home</a>
+                    <hr class="border-gray-300">
+                    <a style="color: #ff236c;" class="font-semibold" href="/about">About</a>
+                    <hr class="border-gray-300">
+                    <a style="color: #00d2dc;" class="font-semibold" href="/our-programs">Our Programs</a>
+                    <hr class="border-gray-300">
+                    <a style="color: #cf9100;" class="font-semibold" href="/our-gallery">Our Gallery</a>
+                    <hr class="border-gray-300">
+                    <a style="color: #5d58ef;" class="font-semibold" href="/admission">Admission</a>
+                    <hr class="border-gray-300">
+                    <a style="color: #80f;" class="font-semibold" href="/contact-us">Contact Us</a>
+                    <hr class="border-gray-300">
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:flex items-center lg:text-lg justify-between px-[6px] xl:px-24">
+            <a class="flex items-center" href="/">
+                <img width="75" height="75" src="/static/images/pingpongLogo.webp" alt="Ping Pong Learning Centre Logo">
+                <span class="font-bold flex flex-col md:text-[19px] lg:text-[21px]" style="color: #ff236c;">
+                    <div>Ping Pong</div>
+                    <div>Learning Centre</div>
+                </span>
+            </a>
+            <div class="space-x-3 lg:space-x-8">
+                <a id="home" style="color: #a5c347; border-color: #a5c347;" class="font-semibold hover:border-b-[4px] pb-[28px] xl:pb-[26.5px]" href="/">Home</a>
+                <a id="about" style="color: #ff236c; border-color: #ff236c;" class="font-semibold hover:border-b-[4px] pb-[28px] xl:pb-[26.5px]" href="/about">About</a>
+                <a id="ourPrograms" style="color: #00d2dc; border-color: #00d2dc;" class="font-semibold hover:border-b-[4px] pb-[28px] xl:pb-[26.5px]" href="/our-programs">Our Programs</a>
+                <a id="gallery" style="color: #cf9100; border-color: #cf9100;" class="font-semibold hover:border-b-[4px] pb-[28px] xl:pb-[26.5px]" href="/our-gallery">Our Gallery</a>
+                <a id="admission" style="color: #5d58ef; border-color: #5d58ef;" class="font-semibold hover:border-b-[4px] pb-[28px] xl:pb-[26.5px]" href="/admission">Admission</a>
+                <a id="contactUs" style="color: #80f; border-color: #80f;" class="font-semibold hover:border-b-[4px] pb-[28px] xl:pb-[26.5px]" href="/contact-us">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="/static/js/script.js"></script>
+    <script>
+        // 
+        window.onload=()=>{
+            var d = new Date();
+
+            var s = d.getFullYear() + '-' + ('0' + (d.getMonth()+1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+        
+            var node = document.getElementById('dat');
+            if (node) {
+                node.setAttribute('min', s);
+            }
+        }
+        // 
+        document.getElementById('myUrl').value=location.href
+        function ValidateEmail(mail) {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+            {
+                return (true)
+            }
+            return (false)
+        }
+        document.getElementById('bookAVisit').addEventListener('click',(event)=>{
+            if(document.getElementById('parentNam').value.length==0){
+                document.getElementById('parent-name-req').style.display='block'
+                event.preventDefault()
+            }
+            else if(document.getElementById('parentNam').value.length!=0){
+                document.getElementById('parent-name-req').style.display='none'
+            }
+
+            if(document.getElementById('childNam').value.length==0){
+                document.getElementById('child-name-req').style.display='block'
+                event.preventDefault()
+            }
+            else if(document.getElementById('childNam').value.length!=0){
+                document.getElementById('child-name-req').style.display='none'
+            }
+
+            if(document.getElementById('contNum').value.length==0){
+                document.getElementById('cont-num-req').style.display='block'
+                document.getElementById('cont-num-format').style.display='none'
+                document.getElementById('cont-num-start').style.display='none'
+                event.preventDefault()
+            }
+            else if(document.getElementById('contNum').value.length!=0){
+                if(document.getElementById('contNum').value[0]=='0'){
+                    document.getElementById('cont-num-req').style.display='none'
+                    document.getElementById('cont-num-format').style.display='none'
+                    document.getElementById('cont-num-start').style.display='block'
+                    event.preventDefault()
+                }
+                else{
+                    if(document.getElementById('contNum').value.length==10){
+                        document.getElementById('cont-num-req').style.display='none'
+                        document.getElementById('cont-num-format').style.display='none'
+                        document.getElementById('cont-num-start').style.display='none'
+                    }
+                    else{
+                        document.getElementById('cont-num-req').style.display='none'
+                        document.getElementById('cont-num-format').style.display='block'
+                        document.getElementById('cont-num-start').style.display='none'
+                        event.preventDefault()
+                    }
+                }
+            }
+
+            if(document.getElementById('mailId').value.length==0){
+                document.getElementById('mail-id-req').style.display='block'
+                event.preventDefault()
+            }
+            else if(document.getElementById('mailId').value.length!=0){
+                if(ValidateEmail(document.getElementById('mailId').value)){
+                    document.getElementById('mail-id-req').style.display='none'
+                    document.getElementById('mail-id-format').style.display='none'
+                }
+                else{
+                    document.getElementById('mail-id-req').style.display='none'
+                    document.getElementById('mail-id-format').style.display='block'
+                    event.preventDefault()
+                }
+            }
+
+            if(document.getElementById('dat').value.length==0){
+                document.getElementById('dat-req').style.display='block'
+                document.getElementById('dat-now').style.display='none'
+                document.getElementById('dat-off').style.display='none'
+                event.preventDefault()
+            }
+            else if(document.getElementById('dat').value.length!=0){
+                dt=new Date()
+                var s = dt.getFullYear() + '-' + 
+                    ('0' + (dt.getMonth()+1)).slice(-2) + '-' +
+                    ('0' + dt.getDate()).slice(-2);
+                s.toString()
+                d=new Date(document.getElementById('dat').value)
+                if(d.getDay()==0){
+                    document.getElementById('dat-req').style.display='none'
+                    document.getElementById('dat-off').style.display='block'
+                    document.getElementById('dat-now').style.display='none'
+                    event.preventDefault()
+                }
+                else if(dt.getHours()>14 && document.getElementById('dat').value==s){
+                    document.getElementById('dat-req').style.display='none'
+                    document.getElementById('dat-off').style.display='none'
+                    document.getElementById('dat-now').style.display='block'
+                    event.preventDefault()
+                }
+                else{
+                    document.getElementById('dat-req').style.display='none'
+                    document.getElementById('dat-off').style.display='none'
+                    document.getElementById('dat-now').style.display='none'
+                }
+            }
+
+            if(document.getElementById('time').value.length==0){
+                document.getElementById('time-req').style.display='block'
+                document.getElementById('time-inv').style.display='none' 
+                event.preventDefault()
+            }
+            else if(document.getElementById('time').value.length!=0){
+                dt=new Date()
+                var s = dt.getFullYear() + '-' + 
+                    ('0' + (dt.getMonth()+1)).slice(-2) + '-' +
+                    ('0' + dt.getDate()).slice(-2);
+                s.toString()
+                if(document.getElementById('time').value==='8am-11pm' && dt.getHours()>11 && document.getElementById('dat').value==s){
+                    document.getElementById('time-req').style.display='none'
+                    document.getElementById('time-inv').style.display='block'
+                    event.preventDefault()
+                }
+                else{
+                    document.getElementById('time-req').style.display='none'
+                    document.getElementById('time-inv').style.display='none'
+                }
+            }
+        })
+
+        // 
+        if(document.getElementById('visitBookedAlert')){
+            Swal.fire({
+            template: '#visitBookedAlert'
+            })
+        }
+    </script>
+</body>

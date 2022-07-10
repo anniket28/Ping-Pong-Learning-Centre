@@ -1,0 +1,29 @@
+{
+  "name": "pingponglearningcentre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "build:css": "npx tailwindcss -i ./src/tailwind.css -o ./static/css/style.css",
+    "dev": "npm run start && npm run build:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "nodemailer": "^6.7.3",
+    "sweetalert2": "^11.4.17"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "nodemon": "^2.0.15",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.5"
+  }
+}
