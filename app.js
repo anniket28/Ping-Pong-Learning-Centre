@@ -63,6 +63,10 @@ app.get('/admission',(req,res)=>{
 // Our Gallery Page
 app.get('/our-gallery',(req,res)=>{
     let galleryImages=fs.readdirSync('static/images/Gallery')
+
+    galleryImages[0]=galleryImages[galleryImages.length-1]
+    galleryImages.pop()
+    
     res.status(200).render('gallery.ejs',{title:'Our Gallery | ',currentYear:currentYear,galleryImages:galleryImages, visit_booked:req.flash('visit_booked')})
 })
 

@@ -2,6 +2,28 @@
 <%- include('Layouts/header.ejs') %>
 
 <!--  -->
+<% if(admission_enquiry_sent.length!=0) { %>
+  <template id="addmissionEnquiryFilledAlert">
+  <!--  -->
+  <swal-title>
+      <%= admission_enquiry_sent %>
+  </swal-title>
+  <!--  -->
+  <swal-icon type="success"></swal-icon>
+  <!--  -->
+  <swal-button type="confirm">
+      Ok
+  </swal-button>
+  <!--  -->
+  <swal-param name="allowEscapeKey" value="false" />
+  <!--  -->
+  <swal-param
+      name="customClass"
+      value='{ "popup": "my-popup" }' />
+  </template>
+<% } %>
+
+<!--  -->
 <section style="background-image: url('/static/images/admissionBackgroundImage.webp');" id="admissionBackgroundImage">
     <div>
       <h2 style="background-color: rgba(0, 0, 0, 0.5); font-family: Bubblegum Sans, sans-serif; width: fit-content;" class="font-bold mx-auto px-3 py-1 text-white rounded-full text-[30px] md:text-[40px] lg:text-[50px]">Admission</h2>
