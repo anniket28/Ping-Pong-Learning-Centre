@@ -461,7 +461,7 @@
   <%- include('Layouts/toTop.ejs') %>
 
   <script>
-    document.onload=()=>{
+    if(document.readyState=="loading"){
       document.getElementById('onLoadModalButton').click()
     }
 
