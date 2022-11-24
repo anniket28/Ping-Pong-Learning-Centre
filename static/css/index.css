@@ -87,6 +87,20 @@
   opacity: 0.5;
 } */
 
+/* On Load Background Image */
+#onLoadBackgroundImage {
+  position: relative;
+  /* margin-top: 5rem; */
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: no-repeat center top;
+  /* background-color: #6c757d; */
+  background-size: cover;
+  /* border-bottom-left-radius: 500% 500px;
+  border-bottom-right-radius: 250% 250px; */
+  height: 90vh;
+}
+
 /* About Background Image */
 #aboutBackgroundImage {
   position: relative;
@@ -399,28 +413,38 @@
     max-width: 500px;
     margin: 1.75rem auto;
   }
-
-  .modal-dialog-scrollable {
-    height: calc(100% - 3.5rem);
+  #onLoadModal .modal-dialog{
+    max-width: 890px !important;
   }
-
-  .modal-dialog-centered {
-    min-height: calc(100% - 3.5rem);
+  #onLoadModal .modal-dialog{
+    padding-left: 5px;
+    padding-right: 5px;
   }
-
   .modal-sm {
     max-width: 300px;
   }
+  .modal-dialog-scrollable {
+    height: calc(100% - 3.5rem);
+  }
+  .modal-dialog-centered {
+    min-height: calc(100% - 3.5rem);
+  }
 }
 @media (min-width: 992px) {
-  .modal-lg,
+  /* .modal-lg,
 .modal-xl {
     max-width: 800px;
+  } */
+  #onLoadModal .modal-dialog{
+    max-width: 990px !important;
   }
 }
 @media (min-width: 1200px) {
   .modal-xl {
     max-width: 1140px;
+  }
+  #onLoadModal .modal-dialog{
+    max-width: 1140px !important;
   }
 }
 .modal-fullscreen {
